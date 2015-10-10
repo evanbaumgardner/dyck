@@ -23,8 +23,22 @@ class DyckViewController: UIViewController {
         
         let wallingfordDicks = DicksDriveIn(storeName: "Dick's Drive-In: Wallingford\n (Est. 1954)", storeAddress: "111 N.E. 45th St. Seattle, WA,98105", coordinate: CLLocationCoordinate2D(latitude: 47.661117900, longitude: -122.327791100));
         
+        let broadwayDicks = DicksDriveIn(storeName: "Dick's Drive-In: Broadway\n (Est. 1955)", storeAddress: "115 Broadway Ave E, Seattle, WA 98102", coordinate: CLLocationCoordinate2D(latitude: 47.624617600, longitude: -122.321006500));
+        
+        let holmanRoadDicks = DicksDriveIn(storeName: "Dick's Drive-In: Holman Road\n (Est. 1960)", storeAddress: "9208 Holman Rd NW, Seattle, WA 98117", coordinate: CLLocationCoordinate2D(latitude: 47.696401600, longitude: -122.371686900));
+        
+        let lakeCityDicks = DicksDriveIn(storeName: "Dick's Drive-In: Lake City\n (Est. 1963)", storeAddress: "12325 30th Ave NE, Seattle, WA 98125", coordinate: CLLocationCoordinate2D(latitude: 47.718217700, longitude: -122.296841400));
+    
+        let queenAnneDicks = DicksDriveIn(storeName: "Dick's Drive-In: Queen Anne\n (Est. 1974)", storeAddress: "500 Queen Anne Ave N, Seattle, WA 98109", coordinate: CLLocationCoordinate2D(latitude: 47.623463400, longitude: -122.356337100));
+        
+        let edmondsDicks = DicksDriveIn(storeName: "Dick's Drive-In: Edmonds\n (Est. 2011)", storeAddress: "21910 WA-99, Edmonds, WA 98026", coordinate: CLLocationCoordinate2D(latitude: 47.801058800, longitude: -122.331603900));
+        
         mapView.addAnnotation(wallingfordDicks)
-        //mapView.addAnnotation(broadwayDicks)
+        mapView.addAnnotation(broadwayDicks)
+        mapView.addAnnotation(holmanRoadDicks)
+        mapView.addAnnotation(lakeCityDicks)
+        mapView.addAnnotation(queenAnneDicks)
+        mapView.addAnnotation(edmondsDicks)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -32,7 +46,7 @@ class DyckViewController: UIViewController {
         checkLocationAuthorizationStatus()
     }
     
-    let regionRadius: CLLocationDistance = 8000
+    let regionRadius: CLLocationDistance = 14000
     func centerMapOnLocation(location: CLLocation) {
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
             regionRadius * 2.0, regionRadius * 2.0)
